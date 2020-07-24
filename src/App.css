@@ -1,0 +1,27 @@
+#board {
+  /* display: flex;
+  flex-direction: row; */
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.grid {
+  height: 28px;
+  width: 28px;
+  border: 1px solid black;
+}
+
+svg {
+  position: absolute;
+}
+
+#toolbar {
+  position: absolute;
+  display: inline-grid;
+  right: 0;
+  margin-top: 10%;
+}
+
+#toolbar button {
+  margin-top: 40px;
+}
