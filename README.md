@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# mars-rover
+The Mars Colonization Program
 
-## Available Scripts
+Web App URL: https://jagadeeshramd.github.io/mars-rover/
+# Jagadeeshram Mars Rover
 
-In the project directory, you can run:
+The project has been developed using Python in the back end and the Flask web framework with the front end developed in HTML, CSS, Javascript. The back end is deployed as an API on Heroku cloud. The web app has an interactable grid that lets you choose a start and end point and add obstacles in the cells of the grid. Breadth First Search, Dijkstra’s algorithm, A\* algorithm – Manhattan heuristic have been implemented. The user can choose any of the above algorithms to find the shortest path and its length between the start and end cells on the grid while avoiding obstacles on the way.
 
-### `npm start`
+## Deployed endpoint:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+https://jagadeeshram-mars-rover.herokuapp.com/getPath
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```
+curl -X POST \
+  https://jagadeeshram-mars-rover.herokuapp.com/getPath \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d '{
+	"boardHeight": "100",
+	"boardWidth": "100",
+	"wallsList": [[2, 0], [7, 0]],
+	"startPoint": [0, 0],
+	"endPoint": [4, 5],
+	"algorithm": "a"
+}'
+```
 
-### `npm test`
+## To run locally
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`cd API`
 
-### `npm run build`
+`set FLASK_APP=app`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`flask run`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
