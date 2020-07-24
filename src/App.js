@@ -4,8 +4,8 @@ import "./App.css";
 
 function App() {
   const board = [30, 30];
-  const defaultStartPoint = [Math.floor(Math.random() * board[0]) + 1, Math.floor(Math.random() * board[1]) + 1];
-  const defaultEndPoint = [Math.floor(Math.random() * board[0]) + 1, Math.floor(Math.random() * board[1]) + 1];
+  const defaultStartPoint = [Math.floor(Math.random() * board[0]), Math.floor(Math.random() * board[1])];
+  const defaultEndPoint = [Math.floor(Math.random() * board[0]), Math.floor(Math.random() * board[1])];
   const [response, setResponse] = useState([]);
   const [startPoint, setStartPoint] = useState(defaultStartPoint);
   const [endPoint, setEndPoint] = useState(defaultEndPoint);
@@ -22,8 +22,8 @@ function App() {
   });
 
   useEffect(() => {
-    document.getElementById(startPoint.join("-")).style.backgroundColor = "green";
-    document.getElementById(endPoint.join("-")).style.backgroundColor = "red";
+    document.getElementById(startPoint?.join("-")).style.backgroundColor = "green";
+    document.getElementById(endPoint?.join("-")).style.backgroundColor = "red";
   });
 
   const handleGridClick = (e) => {
