@@ -25,6 +25,8 @@ curl -X POST \
 
 ## To run locally
 
+`cd API`
+
 `set FLASK_APP=app`
 
 `flask run`
