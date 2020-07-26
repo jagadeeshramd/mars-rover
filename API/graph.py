@@ -26,16 +26,18 @@ class Graph():
 
         self.nodes = {}
         self.nodelist = []
+        self.olist=[]
+        for (i,j) in olist:
+            self.olist.append((int(j),int(i)))
+        #self.olist = olist  # list of nodes that are obstacles
 
-        self.olist = olist  # list of nodes that are obstacles
-
-        self.start = Node(False, start[0], start[1])
+        self.start = Node(False, int(start[1]), int(start[0]))
         # Put the cell node in a dictionary with
         self.nodes[self.start.r, self.start.c] = self.start
         # coord as keys and append in nodelist.
         self.nodelist.append(self.start)
 
-        self.end = Node(False, end[0], end[1])
+        self.end = Node(False, int(end[1]), int(end[0]))
         # Put the cell node in a dictionary with
         self.nodes[self.end.r, self.end.c] = self.end
         # coord as keys and append in nodelist.
@@ -175,6 +177,10 @@ class Graph():
             pl=round(plength,2)
             #print("Path length: ", pl)
             #print("\n", path)
+            path_n=[]
+            for (i,j) in path:
+                path_n.append((j,i))
+
 
         elif algo == "d":
             # Sets all necessary lists and
@@ -190,6 +196,9 @@ class Graph():
             # calculated path.
             #print("Path length: ", plength)
             #print("\n", path)
+            path_n=[]
+            for (i,j) in path:
+                path_n.append((j,i))
 
         elif algo == "a":
             # Sets all necessary lists and
@@ -205,8 +214,11 @@ class Graph():
             # calculated path.
             path = reconstruct_path(prev, self.start, self.end)
             #print("\n", path)
+            path_n=[]
+            for (i,j) in path:
+                path_n.append((j,i))
 
-        return pl, path
+        return pl, path_n
 
 
 def reconstruct_path(previous, start, end):
