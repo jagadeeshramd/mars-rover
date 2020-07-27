@@ -24,6 +24,9 @@ curl -X POST \
 	"algorithm": "a"
 }'
 ```
+Breadth first search : "bfs"
+Dijkstra's Algorithm : "d"
+A* Algorithm Manhattan : "a"
 
 ## To run locally
 ## To run UI
